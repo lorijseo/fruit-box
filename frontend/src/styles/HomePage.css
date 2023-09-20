@@ -1,0 +1,26 @@
+.HomePage{
+    display:flex;
+    justify-content: space-between;
+}
+
+#products-display{
+    flex-grow: 3;
+}
+
+#products-display h1{
+    text-align: center;
+    
+}
+
+#products{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* max-width:50%; */
+    margin: auto;
+}
+
+#products-cart{
+    background-color: grey;
+    width:25%;
+}
