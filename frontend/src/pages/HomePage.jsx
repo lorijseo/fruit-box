@@ -5,7 +5,8 @@ import Product from '../components/Product'
 import Cart from '../components/Cart'
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
-import '../styles/HomePage.css'
+import '../styles/HomePage.css';
+import slate from "../images/wooden-slate.jpg";
 
 export default function HomePage(){
     const [products, setProducts] = useState([])
@@ -54,10 +55,18 @@ export default function HomePage(){
         })
     }
 
+    const imageStyle ={
+        // height: "1000px",
+        // width: "auto",
+        backgroundImage: `url(${slate})`,
+        backgroundSize: "cover"
+
+    }
+
     return(
         <>
             <Header/>
-            <div className="HomePage">
+            <div className="HomePage" style={imageStyle}>
                 <div id="products-display">
                     <h1>Products</h1>
                     <div id="products">

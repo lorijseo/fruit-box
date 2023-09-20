@@ -1,0 +1,23 @@
+.LandingPage h1{
+    font-size: 100px;
+    text-align: center;
+    position:relative;
+    top:30%;
+}
+
+.LandingPage #dashboard{
+    position:relative;
+    text-align: center;
+    top:50%;
+    margin: auto;
+}
+
+.LandingPage #dashboard:hover{
+    cursor: pointer;
+    transform: translateY(-20px)
+}
+
+.LandingPage a{
+    color:black;
+    text-decoration: none;
+}
