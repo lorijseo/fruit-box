@@ -1,8 +1,9 @@
 // import {Link} from 'react-router-dom';
 import {Card, Button, Form, Modal} from 'react-bootstrap';
 import {useState} from 'react';
-
+import './Product.css'
 import '../styles/Product.css';
+import {FaCartPlus} from 'react-icons/fa'
 
 
 // export default function Product({product}){
@@ -27,7 +28,7 @@ import '../styles/Product.css';
 // }
 
 export default function Product({product, addToCart}){
-    const [qty, setQty] = useState(0);
+    const [qty, setQty] = useState();
 
     const [show, setShow] = useState(false);
 
@@ -42,13 +43,13 @@ export default function Product({product, addToCart}){
         if (Number(qty) > 0){
             addToCart({...product, qty})
         }
-        setQty("wap");
+        setQty();
         return 
     }
 
     return(
         <>
-            <Card className="Product">
+            {/* <Card className="Product">
 
                 <Card.Img variant="left" src={product.image} alt="" onClick={handleShow}/>
 
@@ -67,7 +68,32 @@ export default function Product({product, addToCart}){
                     </Form.Control>
                     <Button variant="success" onClick={addToCartHandler}>Add to Cart</Button>
                 </Card.Body>
-            </Card>
+            </Card> */}
+
+            <div className="Product">
+                <img  src={product.image} alt="" onClick={handleShow}/>
+                <div id="product-body">
+                    <h3 id="product-name">
+                        {product.name}
+                    </h3>
+                    <p id="product-price">
+                        ${product.price}
+                    </p>
+                    <div id="select-qty">
+                        {/* <Form.Control as="select" value={Number(qty)} onChange={(e) => handleDropdown(e)}>
+                            <option hidden>qty</option>
+                            {[1,2,3,4,5].map((x) => <option key={x} value={x}>{x}</option>)}
+                        </Form.Control> */}
+                        {/* <select value={Number(qty)} onChange={(e) => handleDropdown(e)}>
+                            <option hidden># of boxes</option>
+                            {[1,2,3,4,5].map((x) => <option key={x} value={x}>{x}</option>)}
+                        </select> */}
+                        <input type="number" min="1" max="50" value={Number(qty)} onChange={(e) => handleDropdown(e)} placeholder="qty"/>
+                        <Button variant="success" onClick={addToCartHandler}><FaCartPlus/></Button>
+                    </div>
+
+                </div>
+            </div>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
