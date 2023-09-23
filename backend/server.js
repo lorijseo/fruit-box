@@ -8,7 +8,13 @@ import {v4 as uuid} from 'uuid';
 import mongoose from 'mongoose';
 import Fruit from './models/fruitModel.js';
 // import fruits from './fruits.js'
-import cors from 'cors'
+import cors from 'cors';
+// import * as paypal from "./pyapal-api.js";
+import stripe from 'stripe';
+let Stripe = stripe(process.env.STRIPE_SECRET_KEY)
+// custom imports
+import itemRouter from './routes/itemRouter.js'
+
 
 // let fruits =[
 //     {id: uuid(), item: "carrot", price: 5},
@@ -22,6 +28,7 @@ if(process.env.NODE_ENV === 'development'){
 }
 app.use(express.json())
 app.use(cors())
+
 app.get('/', (req,res) =>{
     res.send('Toasting toast')
 })
@@ -32,12 +39,7 @@ app.post('/', (req,res)=>{
 })
 
 
-// GET ALL FRUITS
-app.get('/api/fruits', async (req,res)=>{
-    const fruits = await Fruit.find({})
-    res.status(200).json({fruits})
 
-})
 
 // with express
 // app.get('/api/fruits', async (req,res)=>{
@@ -57,41 +59,83 @@ app.get('/api/fruits', async (req,res)=>{
 //     res.status(201).json({newItem})
 // })
 
-app.post('/api/fruits', async (req,res)=>{
-    try{
-        // const {item, price} = req.body;
-        const newItem = await Fruit.create(req.body)
-        res.status(201).json({newItem})
-    }
-    catch(error){
-        res.status(500).json({msg: "couldn't create fruit"})
-    }
+// // GET ALL FRUITS
+// app.get('/api/fruits', )
 
-})
+// // Create fruit
+// app.post('/api/fruits', )
 
 
-// GET A FRUIT BY ID
-app.get('/api/fruits/:id', async (req,res)=>{
-    const {id} = req.params;
-    const foundItem = await Fruit.findById(id);
-    res.status(200).json({foundItem})
-    // const fruit = fruits.find((fruit) => fruit.id === id);
-    // if (fruit){
-    //     res.status(200).json({fruit})
-    // }
-    // else{
-    //     res.status(404).json({msg:"cannot find fruit"})
-    //     return
-    // }
-})
+// // GET A FRUIT BY ID
+// app.get('/api/fruits/:id', async (req,res)=>{
+//     const {id} = req.params;
+//     const foundItem = await Fruit.findById(id);
+//     res.status(200).json({foundItem})
+// })
 
-// DELETE A FRUIT BY ID
+// // DELETE A FRUIT BY ID
 
-app.delete('/api/fruits/:id', async (req,res)=>{
-    const {id} = req.params;
-    const deleteItem = await Fruit.findByIdAndDelete(id)
-    res.status(200).json({msg:"deleted!", job: deleteItem})
-})
+// app.delete('/api/fruits/:id', )
+
+app.use('/api/fruits', itemRouter)
+
+
+// // create order
+// app.post("/api/orders", async (req, res) => {
+//     try {
+//       const order = await paypal.createOrder(req.body);
+//       res.json(order);
+//       console.log(order)
+//     } catch (err) {
+//       res.status(500).send(err.message);
+//     }
+//   });
+  
+// // capture payment
+// app.post("/api/orders/:orderID/capture", async (req, res) => {
+// const { orderID } = req.params;
+// try {
+//     const captureData = await paypal.capturePayment(orderID);
+//     res.json(captureData);
+// } catch (err) {
+//     res.status(500).send(err.message);
+// }
+// });
+
+// const storeItems = new Map([
+//     [1, { priceInCents: 10000, name: "Learn React Today" }],
+//     [2, { priceInCents: 20000, name: "Learn CSS Today" }],
+//   ])
+
+// app.post('/create-checkout-session', async (req,res) => {
+//     try{
+//         const session = await Stripe.Checkout.session.create({
+//             payment_method_types:['card'],
+//             mode: 'payment',
+//             line_items : req.body.items.map((item)=> {
+//                 const storeItem = storeItems.get(item.id);
+//                 return {
+//                     price_data: {
+//                         currency: 'USD',
+//                         product_data: {
+//                             name: storeItem.name
+//                         },
+//                         unit_amount: storeItem.priceInCents
+//                     },
+//                     quantity: item.quantity
+//                 }
+//             }),
+//             success_url:`${process.env.CLIENT_URL}`,
+//             cancel_url: `${process.env.CLIENT_URL}/check-out`
+        
+//         })
+//         res.json({url:session.url})
+//     }
+//     catch(error){
+//         res.status(500).json({error: error.message})
+//     }
+// })
+
 
 
 const port = process.env.PORT || 5100

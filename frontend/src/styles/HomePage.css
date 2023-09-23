@@ -1,11 +1,10 @@
 .HomePage{
-    display:flex;
-    justify-content: space-between;
+    padding: 0 3%;
 }
 
-#products-display{
+/* #products-display{
     flex-grow: 3;
-}
+} */
 
 #products-display h1{
     text-align: center;
@@ -20,7 +19,32 @@
     margin: auto;
 }
 
-#products-cart{
-    background-color: grey;
-    width:25%;
+
+
+#register{
+    width:100px;
 }
+
+#register-container{
+    text-align: end;
+    /* background-color: #ffe881;
+    padding: 10px;
+    border-radius: 10px; */
+}
+
+#register:hover{
+    cursor: pointer;
+    transform:translateY(-10px)
+}
+
+.offcanvas-header{
+    background-color: #ffe881;
+}
+
+.offcanvas-body{
+    background-color: #ffe881;
+}
+
+/* #products-cart{
+    background-color: greenyellow;
+} */
