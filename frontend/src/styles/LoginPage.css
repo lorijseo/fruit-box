@@ -30,6 +30,7 @@ button{
     /* display:flex; */
 }
 
-a{
+.LoginPage a{
  text-decoration: none; 
+ margin: 0;
 }

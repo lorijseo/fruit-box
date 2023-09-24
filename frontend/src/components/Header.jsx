@@ -18,13 +18,13 @@ export default function Header(){
                     <Navbar.Collapse>
                         <Nav>
 
-                            <Link to='/register'>
-                                    Explore
+                            <Link to='/box'>
+                                    Box
                             </Link>
                             <Link to='/shop'>
                                     Shop
                             </Link>
-                            <Link to='/register'>
+                            <Link to='/login'>
                                     Login
                             </Link>
 

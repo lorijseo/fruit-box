@@ -8,7 +8,8 @@ import lgCarIcon from '../images/lg-car-icon.png';
 import xlgCarIcon from '../images/xlg-car-icon.png';
 import BoxIcon from '../images/box-icon.png';
 import BoxAlgorithm from '../components/BoxAlgorithm';
-
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 export default function BoxingPage(){
@@ -43,7 +44,10 @@ export default function BoxingPage(){
     }
 
     return(
-        <div className="BoxingPage">
+        <>
+        <Header/>
+                <div className="BoxingPage">
+            
             <Link to='/shop'>back to products</Link>
             <h1>Box Page</h1>
 
@@ -87,15 +91,14 @@ export default function BoxingPage(){
                 <button onClick={handleSubmit}>Start Packing</button>
             </form>
 
-            <div>
+            <div id="box-algorithm">
                 <h3>Calculating your packages...</h3>
-
-                <div>
-                    <h5>Cost friendly</h5>
-                </div>
-
             </div>
+            
         </div>
+        <Footer/>
+        </>
+
 
 
     )

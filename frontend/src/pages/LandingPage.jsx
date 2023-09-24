@@ -13,6 +13,7 @@ export default function LandingPage(){
     }
     
     return(
+        <>
         <div className="LandingPage">
             <div style={imageStyle}>
                 <h1>Fruitbox</h1>
@@ -24,7 +25,10 @@ export default function LandingPage(){
                 </Link>
                 
             </div>
-            <Footer/>
+            
         </div>
+        <Footer/>
+        </>
+
     )
 }

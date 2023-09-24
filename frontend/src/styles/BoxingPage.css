@@ -1,5 +1,5 @@
 .BoxingPage{
-    margin: 10% auto;
+    margin: 5% auto;
 }
 
 h1{
@@ -43,4 +43,10 @@ a{
 
 #display-cars img, #display-box img{
     margin: 0 10px
+}
+
+#box-algorithm{
+    width:400px;
+    margin:10% auto;
+
 }
