@@ -1,4 +1,4 @@
-.BoxingPage{
+.RegistrationPage{
     margin: 10% auto;
 }
 
@@ -9,9 +9,8 @@ h1{
 
 #form{
     width:400px;
-    margin:10% auto;
+    margin:auto;
 }
-
 #form div{
     display:flex;
     flex-direction: column;
@@ -33,14 +32,4 @@ button{
 
 a{
  text-decoration: none; 
-}
-
-#display-cars, #display-box{
-    width:700px;
-    margin: 5% auto;
-    text-align: center;
-}
-
-#display-cars img, #display-box img{
-    margin: 0 10px
 }

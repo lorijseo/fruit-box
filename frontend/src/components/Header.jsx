@@ -1,7 +1,7 @@
 import {Navbar, Nav, Container} from 'react-bootstrap';
 import logo from '../images/logo.png';
 import {Link} from 'react-router-dom';
-import './Header.css'
+import '../styles/Header.css'
 
 export default function Header(){
     return(
@@ -13,17 +13,22 @@ export default function Header(){
                                 <img src={logo} alt="fruity" width="30px"/>
                                 fruitbox
                             </Link>
-
                         </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse>
                         <Nav>
+
+                            <Link to='/register'>
+                                    Explore
+                            </Link>
                             <Link to='/shop'>
-                                    shop
+                                    Shop
                             </Link>
                             <Link to='/register'>
-                                    register
+                                    Login
                             </Link>
+
+
 
                         </Nav>
                     </Navbar.Collapse>

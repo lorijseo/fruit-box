@@ -4,14 +4,15 @@ import Product from '../components/Product'
 import Cart from '../components/Cart'
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
-import '../styles/HomePage.css';
+import '../styles/ProductPage.css';
 import slate from "../images/wooden-slate.jpg";
 import register from "../images/cash-register.png";
-import backdrop from "../images/botw07.jpg"
+import backdrop from "../images/product-backdrop.jpg";
+import {toast} from 'react-toastify'
 
 import {Button, Offcanvas, Badge} from 'react-bootstrap';
 
-export default function HomePage(){
+export default function ProductPage(){
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
     const [subtotal, setSubtotal] = useState(0);
@@ -54,6 +55,7 @@ export default function HomePage(){
         }
         else{
             setCart((currCart) => {return [...currCart, newProduct]});
+            toast.success(`Added ${newProduct.name} x ${newProduct.qty} to cart`)
         }
         
     }
@@ -66,25 +68,30 @@ export default function HomePage(){
     }
 
     const imageStyle ={
-        // height: "1000px",
+        height: "700px",
         // width: "auto",
         // backgroundImage: `url(${backdrop})`,
-        backgroundSize: "cover",
-        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),url(${backdrop})`
+        backgroundSize: "contain",
+        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),url(${backdrop})`,
+        objectPosition: '50% 100%',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center'
+        
 
     }
 
     return(
         <>
             <Header/>
-            <div className="HomePage" style={imageStyle}>
+            <div className="ProductPage">
+                <div id="main" style={imageStyle}>
+                    <h1>From Farm to Box</h1>
+                </div>
                 <div id="products-display">
-                    <h1>Products</h1>
+                    <h2>Back in stock</h2>
                     <div id="register-container">
                         <img src={register} alt="" id="register" onClick={handleShow}/>
                     </div>
-                    
-
                     <div id="products">
                         {products.map((p) => <Product product={p} key={p._id} addToCart={addToCart}/>)}
                     </div>

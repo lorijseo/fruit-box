@@ -2,6 +2,10 @@ import {Link, Form, redirect} from 'react-router-dom';
 import {useState} from 'react';
 import axios from 'axios';
 import {toast} from 'react-toastify'
+import '../styles/RegistrationPage.css';
+import sign from "../images/long-wooden-sign-small.png";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export async function submitRegistration({request}){
     const formData = await request.formData();
@@ -37,30 +41,49 @@ export default function RegisterPage(){
     //     console.log(formData);
     // }
 
+    // const imageStyle ={
+    //     height: "1000px",
+    //     backgroundSize: "contain",
+    //     backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),url(${sign})`,
+    //     // backgroundRepeat: 'no-repeat',
+    //     margin:'auto'
+
+    // }
     
 
     return(
         <>
-            <h1>Registration Page</h1>
-            <Form method='post'>
-                <label htmlFor='username'>Username</label>
-                <input type="text" id='username' name='username' value={formData.username} onChange={handleChange} required/>
+            <Header/>
+            <div className="RegistrationPage">
+                <h1>Registration Page</h1>
+                <Form method='post' id="form">
+                    <div>
+                        <label htmlFor='username'>Username</label>
+                        <input type="text" id='username' name='username' value={formData.username} onChange={handleChange} required/>
+                    </div>
 
-                <label htmlFor='password'>Password</label>
-                <input type="password" id='password' name='password' value={formData.password} onChange={handleChange}required />
+                    <div>
+                        <label htmlFor='password'>Password</label>
+                        <input type="password" id='password' name='password' value={formData.password} onChange={handleChange}required />
+                    </div>
 
-                <label htmlFor='email'>email</label>
-                <input type="email" id='email' name='email' value={formData.email} onChange={handleChange} required/>
-
-                <label htmlFor='location'>City</label>
-                <input type="text" id='location' name='location' value={formData.location} onChange={handleChange} required/>
-
-                <button type='submit'>Register</button>
-            </Form>
-            <div>
-                <h3>Already have an acount?</h3>
-                <Link to='/login'>login</Link>
+                    <div>
+                        <label htmlFor='email'>email</label>
+                        <input type="email" id='email' name='email' value={formData.email} onChange={handleChange} required/>
+                    </div>
+                    <div>
+                        <label htmlFor='location'>City</label>
+                        <input type="text" id='location' name='location' value={formData.location} onChange={handleChange} required/>
+                    </div>
+                    <button type='submit'>Register</button>
+                </Form>
+                <div id="login-route">
+                    <h4>Already have an acount?</h4>
+                    <Link to='/login'>Login</Link>
+                </div>
             </div>
+            <Footer/>
         </>
+
     )
 }

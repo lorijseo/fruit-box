@@ -1,31 +1,10 @@
 // import {Link} from 'react-router-dom';
 import {Card, Button, Form, Modal} from 'react-bootstrap';
 import {useState} from 'react';
-import './Product.css'
 import '../styles/Product.css';
-import {FaCartPlus} from 'react-icons/fa'
+import {FaCartPlus} from 'react-icons/fa';
+import sign from "../images/wooden-sign-small.png";
 
-
-// export default function Product({product}){
-//     return(
-//         <div className="Product">
-//             <Link to={`/product/${product._id}`}>
-//                 <img src={product.image} alt="" />
-//             </Link>
-//             <div>
-//                 <Link to={`/product/${product._id}`}>
-//                     <div id="product-name">
-//                         {product.name}
-//                     </div>
-//                 </Link>
-//                 <div id="product-price">
-//                     ${product.price}
-//                 </div>
-//             </div>
-            
-//         </div>
-//     )
-// }
 
 export default function Product({product, addToCart}){
     const [qty, setQty] = useState('');
@@ -47,30 +26,17 @@ export default function Product({product, addToCart}){
         return 
     }
 
+    // const imageStyle ={
+    //     height: "500px",
+    //     backgroundSize: "contain",
+    //     backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),url(${sign})`,
+    //     backgroundRepeat: 'no-repeat',
+    //     margin:'auto'
+    // }
+
     return(
         <>
-            {/* <Card className="Product">
-
-                <Card.Img variant="left" src={product.image} alt="" onClick={handleShow}/>
-
-                <Card.Body>
-
-                    <Card.Title id="product-name">
-                        {product.name}
-                    </Card.Title>
-
-                    <Card.Text id="product-price">
-                        ${product.price}
-                    </Card.Text>
-                    <Form.Control as="select" value={Number(qty)} onChange={(e) => handleDropdown(e)}>
-                        <option hidden># of boxes</option>
-                        {[1,2,3,4,5].map((x) => <option key={x} value={x}>{x}</option>)}
-                    </Form.Control>
-                    <Button variant="success" onClick={addToCartHandler}>Add to Cart</Button>
-                </Card.Body>
-            </Card> */}
-
-            <div className="Product">
+            <div className="Product shadow p-3 mb-5 bg-white rounded" >
                 <img  src={product.image} alt="" onClick={handleShow}/>
                 <div id="product-body">
                     <h3 id="product-name">

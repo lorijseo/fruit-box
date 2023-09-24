@@ -6,6 +6,7 @@
 /* .Header{
     background-color: green;
 } */
+
 .Header .container{
     max-width: 3000px;
     padding: 0 50px;
@@ -18,4 +19,12 @@
 
 .Header .navbar-collapse{
     justify-content: end;
+}
+
+a{
+    margin:0 10px;
+}
+
+a:hover{
+    text-decoration: underline;
 }

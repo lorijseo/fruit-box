@@ -1,4 +1,4 @@
-.HomePage{
+.ProductPage{
     padding: 0 3%;
 }
 
@@ -6,7 +6,7 @@
     flex-grow: 3;
 } */
 
-#products-display h1{
+#products-display h2{
     text-align: center;
     
 }
@@ -38,11 +38,11 @@
 }
 
 .offcanvas-header{
-    background-color: #ffe881;
+    background-color: green;
 }
 
 .offcanvas-body{
-    background-color: #ffe881;
+    background-color: green;
 }
 
 /* #products-cart{

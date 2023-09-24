@@ -1,6 +1,6 @@
 import {ListGroup, Row, Col, Form, Button} from 'react-bootstrap';
 import {FaTrash} from 'react-icons/fa';
-import './CartItem.css'
+import '../styles/CartItem.css'
 
 export default function CartItem({product, removeFromCart}){
 

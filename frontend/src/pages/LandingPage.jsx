@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import backdrop from "../images/botw01.jpg";
 import yellowBox from "../images/yellow-box.png"
 import {Link} from 'react-router-dom';
-import "./LandingPage.css"
+import "../styles/LandingPage.css"
 
 export default function LandingPage(){
     const imageStyle ={
