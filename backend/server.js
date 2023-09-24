@@ -6,6 +6,7 @@ dotenv.config()
 const app = express();
 import {v4 as uuid} from 'uuid';
 import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser';
 import Fruit from './models/fruitModel.js';
 // import fruits from './fruits.js'
 import cors from 'cors';
@@ -13,7 +14,12 @@ import cors from 'cors';
 import stripe from 'stripe';
 let Stripe = stripe(process.env.STRIPE_SECRET_KEY)
 // custom imports
-import itemRouter from './routes/itemRouter.js'
+import itemRouter from './routes/itemRouter.js';
+import authRouter from './routes/authRouter.js';
+import userRouter from './routes/userRouter.js'
+
+import {body, validationResult} from 'express-validator'
+import {validateTest} from './middleware/validateMiddleware.js'
 
 
 // let fruits =[
@@ -26,17 +32,11 @@ import itemRouter from './routes/itemRouter.js'
 if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'))
 }
+app.use(cookieParser())
 app.use(express.json())
 app.use(cors())
 
-app.get('/', (req,res) =>{
-    res.send('Toasting toast')
-})
 
-
-app.post('/', (req,res)=>{
-    res.json({message:"got the json  message", data:req.body})
-})
 
 
 
@@ -77,7 +77,11 @@ app.post('/', (req,res)=>{
 
 // app.delete('/api/fruits/:id', )
 
-app.use('/api/fruits', itemRouter)
+app.use('/api/fruits', itemRouter);
+// app.use('/api/users', userRouter);
+app.use('/api/auth', authRouter);
+
+app.use('/api/users', userRouter)
 
 
 // // create order

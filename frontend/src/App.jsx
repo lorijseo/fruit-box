@@ -4,8 +4,11 @@ import CheckOutPage from './pages/CheckOutPage';
 import ErrorPage from './pages/ErrorPage';
 import LandingPage from './pages/LandingPage';
 import BoxingPage from './pages/BoxingPage';
+import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
 // import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-
+import { submitRegistration } from './pages/RegisterPage';
+import { submitLogin } from './pages/LoginPage';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +31,23 @@ const router = createBrowserRouter([
     element: <BoxingPage/>,
     errorElement: <Error/>
   },
+  {
+    path: '/register',
+    element: <RegisterPage/>,
+    errorElement: <Error/>,
+    action: submitRegistration
+  },
+  {
+    path: '/login',
+    element: <LoginPage/>,
+    errorElement: <Error/>,
+    action: submitLogin
+  },
+  // {
+  //   path: '/box',
+  //   element: <BoxingPage/>,
+  //   errorElement: <Error/>
+  // },
 
 ])
 

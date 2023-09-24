@@ -21,6 +21,9 @@ export default function Header(){
                             <Link to='/shop'>
                                     shop
                             </Link>
+                            <Link to='/register'>
+                                    register
+                            </Link>
 
                         </Nav>
                     </Navbar.Collapse>

@@ -28,7 +28,7 @@ import {FaCartPlus} from 'react-icons/fa'
 // }
 
 export default function Product({product, addToCart}){
-    const [qty, setQty] = useState();
+    const [qty, setQty] = useState('');
 
     const [show, setShow] = useState(false);
 

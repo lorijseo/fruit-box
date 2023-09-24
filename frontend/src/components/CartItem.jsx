@@ -20,7 +20,7 @@ export default function CartItem({product, removeFromCart}){
                         <option hidden>qty</option>
                         {[1,2,3,4,5].map((x) => <option key={x} value={Number(x)}>{x}</option>)}
                     </Form.Control> */}
-                    <input type="number" min="1" max="50" value={product.qty}/>
+                    <input type="number" min="1" max="50" value={product.qty} readOnly/>
                 </Col>
                 <Col>
                     ${subTotal}
