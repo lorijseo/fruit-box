@@ -1,0 +1,26 @@
+.BoxAlgorithm{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.BoxAlgorithm h4{
+    width: 600px;
+    margin:auto;
+}
+.BoxAlgorithm > div{
+    border: 3px solid green;
+    margin: 15px auto;
+    padding: 5px;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.box{
+    margin: 10px
+}
