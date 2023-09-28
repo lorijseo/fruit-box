@@ -86,7 +86,7 @@ export default function ProductPage(){
     const data = useLoaderData();
     const [username, setUsername] = useState('Guest');
 
-    if (data && username !== data.user.username){
+    if (!data.msg && username !== data.user.username){
         setUsername(data.user.username)
     }
 

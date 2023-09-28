@@ -61,16 +61,19 @@ export default function LandingPage(){
                 </div>
                 <div className="card-display">
                     <div className="shadow p-3 mb-5 bg-white rounded">
+                        <h3>SHOP</h3>
                         <img src={farmBox} alt="" width="128px" />
-                        <p>SHOP for produce</p>
+                        <p>for produce</p>
                     </div>
                     <div className="shadow p-3 mb-5 bg-white rounded">
+                        <h3>CUSTOMIZE</h3>
                         <img src={box} alt="" />
-                        <p>CUSTOMIZE your box</p>
+                        <p>your box</p>
                     </div>
                     <div className="shadow p-3 mb-5 bg-white rounded">
+                        <h3>PICK UP</h3>
                         <img src={car} alt="" />
-                        <p>PICK UP your order</p>
+                        <p>your order</p>
                     </div>
                 </div >
                 <button id="login-btn">

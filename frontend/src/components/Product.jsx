@@ -22,7 +22,7 @@ export default function Product({product, addToCart}){
         if (Number(qty) > 0){
             addToCart({...product, qty})
         }
-        setQty();
+        setQty('');
         if (show){
             setShow(false)
         }

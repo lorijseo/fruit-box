@@ -21,7 +21,7 @@ export default function Header(){
                             <Link to='/shop'>
                                     Shop
                             </Link>
-                            <Link to='/logout'>
+                            <Link to='/'>
                                     Logout
                             </Link>
 
@@ -33,28 +33,3 @@ export default function Header(){
         </header>
     )
 }
-
-// export default function Header(){
-//     return(
-//         <header>
-//             <Navbar className="bg-body-tertiary" bg='dark' expand='md' collapseOnSelect>
-//                 <Container>
-
-//                         <Navbar.Brand>
-//                             <img src={logo} alt="fruity" width="30px"/>
-//                             FruitBox
-//                         </Navbar.Brand>
-//                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-//                     <Navbar.Collapse>
-//                         <Nav>
-//                             <Nav.Link href="#home">Home</Nav.Link>
-//                             <Nav.Link href="#link">Link</Nav.Link>
-
-//                         </Nav>
-//                     </Navbar.Collapse>
-
-//                 </Container>
-//             </Navbar>
-//         </header>
-//     )
-// }
