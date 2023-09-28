@@ -7,14 +7,16 @@ export default function CheckOutOrder({cart, subtotal}){
         <div>
             <Card.Body>
                 <Card.Title>
-
-                    <Link to="/box" state={cart}> Check out</Link>
+                    Summary
                 </Card.Title>
                 <ListGroup>
                     <ListGroup.Item>Subtotal: ${subtotal}</ListGroup.Item>
                     <ListGroup.Item>Tax: $10</ListGroup.Item>
                     <ListGroup.Item>Total: ${(Number(subtotal) + 10).toFixed(2)}</ListGroup.Item>
                 </ListGroup>
+                <button>
+                    <Link to="/box" state={cart}> Check out</Link>
+                </button>
             </Card.Body>
         </div>
     )

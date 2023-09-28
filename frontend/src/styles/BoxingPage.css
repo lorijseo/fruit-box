@@ -1,7 +1,10 @@
 .BoxingPage{
-    margin: 5% auto;
+    margin: 3% auto;
 }
 
+#backBtn{
+    margin: 0 3%;
+}
 h1{
     text-align: center;
     margin: 20px auto;
@@ -21,9 +24,9 @@ label{
     margin:5px 0
 }
 
-button{
+/* button{
     margin:15px 0
-}
+} */
 
 #login-route{
     margin:0 auto;
@@ -52,14 +55,11 @@ a{
 }
 
 #checkOutBtn{
-    margin-left:85%
+    position: absolute;
+    right: 3%;
 }
 
-#checkOutBtn, #backBtn{
-    border: 1px solid black;
-    padding: 5px 15px;
-    color: black;
-}
+
 
 #checkOutBtn:hover, #backBtn:hover{
     text-decoration: none;

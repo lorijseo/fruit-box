@@ -45,6 +45,10 @@
     transform:translateY(-10px)
 }
 
+.offcanvas{
+    width:450px !important;
+}  
+
 .offcanvas-header{
     background-color: #3C9A5C;
     color: #F5F9F6;

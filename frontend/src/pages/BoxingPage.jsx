@@ -45,68 +45,72 @@ export default function BoxingPage(){
 
     return(
         <>
-        <Header/>
-                <div className="BoxingPage">
-            
-            <Link to='/shop' id="backBtn">back to products</Link>
-            <h1>Box Page</h1>
+            <Header/>
+            <div className="BoxingPage">
+                <button id="backBtn">
+                    <Link to='/shop' >back to products</Link>
+                </button>
+                
+                <h1>Box Page</h1>
 
 
-            <div id="display-box">
-                <img src={BoxIcon} alt='' width='100px'/>
-                <img src={BoxIcon} alt='' width='100px'/>
-                <img src={BoxIcon} alt='' width='100px'/>
-                <img src={BoxIcon} alt='' width='100px'/>
-                {/* <img src={BoxIcon} alt='' />
-                <img src={BoxIcon} alt='' width='150px'/> */}
-            </div>
-
-            <form action="#" id="form">
-                <div>
-                    <label htmlFor='carType'>
-                        Select your car type
-                    </label>
-                    <select id="carType" name="carType" onChange={handleChange}>
-                        <option hidden>Select</option>
-                        <option value="sm">Small Car</option>
-                        <option value="md">Average Car</option>
-                        <option value="lg">Large Car</option>
-                        <option value="xlg">Extra Large Car</option>
-                    </select>
+                <div id="display-box">
+                    <img src={BoxIcon} alt='' width='100px'/>
+                    <img src={BoxIcon} alt='' width='100px'/>
+                    <img src={BoxIcon} alt='' width='100px'/>
+                    <img src={BoxIcon} alt='' width='100px'/>
                 </div>
-                <div>
-                    <label htmlFor='boxType'>
-                        Select your box preference
-                    </label>
-                    <select id='boxType' name='boxType' onChange={handleChange}>
-                        <option hidden>Select</option>
-                        {/* <option value="none">No Preference</option> */}
-                        <option value="sm">Small Box</option>
-                        <option value="md">Medium Box</option>
-                        <option value="lg">Large Box</option>
-                    </select>
+
+                <form action="#" id="form">
+                    <div>
+                        <label htmlFor='carType'>
+                            Select your car type
+                        </label>
+                        <select id="carType" name="carType" onChange={handleChange}>
+                            <option hidden>Select</option>
+                            <option value="sm">Small Car</option>
+                            <option value="md">Average Car</option>
+                            <option value="lg">Large Car</option>
+                            <option value="xlg">Extra Large Car</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label htmlFor='boxType'>
+                            Select your box preference
+                        </label>
+                        <select id='boxType' name='boxType' onChange={handleChange}>
+                            <option hidden>Select</option>
+                            {/* <option value="none">No Preference</option> */}
+                            <option value="sm">Small Box</option>
+                            <option value="md">Medium Box</option>
+                            <option value="lg">Large Box</option>
+                        </select>
+                    </div>
+                    <button onClick={handleFormSubmit}>Start Packing</button>
+                </form>
+
+                <div id="display-cars">
+                    <img src={smCarIcon} alt=''/>
+                    <img src={mdCarIcon} alt=''/>
+                    <img src={lgCarIcon} alt=''/>
+                    <img src={xlgCarIcon} alt=''/>
                 </div>
-                <button onClick={handleFormSubmit}>Start Packing</button>
-            </form>
-            <div id="display-cars">
-                <img src={smCarIcon} alt=''/>
-                <img src={mdCarIcon} alt=''/>
-                <img src={lgCarIcon} alt=''/>
-                <img src={xlgCarIcon} alt=''/>
+
+
+                {isFormSubmitted && 
+                <BoxAlgorithm 
+                    cart={cart} 
+                    carType={formData['carType']} 
+                    boxType={formData['boxType']} 
+                    handleBoxSelect={handleBoxSelect}/>}
+
+                {isBoxSelected && 
+                <button id="checkOutBtn">
+                    <Link to='/check-out' >Check Out</Link>
+                </button>
+                }
             </div>
-
-
-            {isFormSubmitted && 
-            <BoxAlgorithm 
-                cart={cart} 
-                carType={formData['carType']} 
-                boxType={formData['boxType']} 
-                handleBoxSelect={handleBoxSelect}/>}
-
-            {isBoxSelected && <Link to='/check-out' id="checkOutBtn">Check Out</Link>}
-            
-        </div>
-        <Footer/>
+            <Footer/>
         </>
     )
 }

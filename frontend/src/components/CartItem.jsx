@@ -12,23 +12,20 @@ export default function CartItem({product, removeFromCart}){
         // <ListGroup.Item>{product.name}-{product.qty}-${totalPrice}</ListGroup.Item>  
         <ListGroup.Item className="CartItem">
             <Row>
-                <Col>
+                <Col xs={4}>
                     {product.name}
                 </Col>
-                <Col>
-                    {/* <Form.Control as="select" value={product.qty} onChange={() => {}}>
-                        <option hidden>qty</option>
-                        {[1,2,3,4,5].map((x) => <option key={x} value={Number(x)}>{x}</option>)}
-                    </Form.Control> */}
+                <Col xs={3}>
                     <input type="number" min="1" max="50" value={product.qty} readOnly/>
+                    {/* {product.qty} */}
                 </Col>
-                <Col>
+                <Col xs={3}>
                     ${subTotal}
                 </Col>
-                <Col>
-                    <Button type="button" variant="light" onClick={() => removeFromCart(product._id)}>
+                <Col xs={2}>
+                    <button onClick={() => removeFromCart(product._id)}>
                         <FaTrash/>
-                    </Button>
+                    </button>
                 </Col>
             </Row>
         </ListGroup.Item>  

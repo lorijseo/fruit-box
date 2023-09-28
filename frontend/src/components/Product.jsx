@@ -23,16 +23,12 @@ export default function Product({product, addToCart}){
             addToCart({...product, qty})
         }
         setQty();
+        if (show){
+            setShow(false)
+        }
         return 
     }
 
-    // const imageStyle ={
-    //     height: "500px",
-    //     backgroundSize: "contain",
-    //     backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),url(${sign})`,
-    //     backgroundRepeat: 'no-repeat',
-    //     margin:'auto'
-    // }
 
     return(
         <>
@@ -55,8 +51,9 @@ export default function Product({product, addToCart}){
                             {[1,2,3,4,5].map((x) => <option key={x} value={x}>{x}</option>)}
                         </select> */}
                         <input type="number" min="0" max="50" value={Number(qty)} onChange={(e) => handleDropdown(e)} placeholder="0"/>
-                        {/* <button onClick={addToCartHandler}><FaCartPlus/></button> */}
+
                         <button onClick={addToCartHandler}>Add</button>
+                        {/* <button onClick={addToCartHandler}><FaCartPlus/></button> */}
                     </div>
 
                 </div>
@@ -68,12 +65,8 @@ export default function Product({product, addToCart}){
                 </Modal.Header>
                 <Modal.Body>{product.description}</Modal.Body>
                 <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-                <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                </Button>
+                <input type="number" min="0" max="50" value={Number(qty)} onChange={(e) => handleDropdown(e)} placeholder="0"/>
+                <button onClick={addToCartHandler}>Add</button>
                 </Modal.Footer>
             </Modal>
         </>
