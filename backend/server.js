@@ -42,7 +42,9 @@ app.use('/api/users', userRouter)
 
 
 
-
+app.get('/', (req,res) => {
+    res.json("vercel deplyed")
+})
 
 const port = process.env.PORT || 5100
 
