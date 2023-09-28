@@ -22,7 +22,7 @@ export async function submitLogin({request}){
     } catch (error) {
         toast.error("Username or Password incorrect")
         // errors.msg = 'username or password invalid';
-        return errors
+        return null
     }
 }
 
