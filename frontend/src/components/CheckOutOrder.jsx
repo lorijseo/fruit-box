@@ -7,11 +7,8 @@ export default function CheckOutOrder({cart, subtotal}){
         <div>
             <Card.Body>
                 <Card.Title>
-                    {/* <Link to="/check-out">Check out</Link> */}
-                    <Link to="/box">Ready to start packing</Link>
-                    <Link to="/box" 
-                    state={cart}> go to box
-                    </Link>
+
+                    <Link to="/box" state={cart}> Check out</Link>
                 </Card.Title>
                 <ListGroup>
                     <ListGroup.Item>Subtotal: ${subtotal}</ListGroup.Item>

@@ -7,7 +7,7 @@ import sign from "../images/wooden-sign-small.png";
 
 
 export default function Product({product, addToCart}){
-    const [qty, setQty] = useState('');
+    const [qty, setQty] = useState(0);
 
     const [show, setShow] = useState(false);
 
@@ -54,7 +54,7 @@ export default function Product({product, addToCart}){
                             <option hidden># of boxes</option>
                             {[1,2,3,4,5].map((x) => <option key={x} value={x}>{x}</option>)}
                         </select> */}
-                        <input type="number" min="1" max="50" value={Number(qty)} onChange={(e) => handleDropdown(e)} placeholder="qty"/>
+                        <input type="number" min="0" max="50" value={Number(qty)} onChange={(e) => handleDropdown(e)} placeholder="0"/>
                         <Button variant="success" onClick={addToCartHandler}><FaCartPlus/></Button>
                     </div>
 

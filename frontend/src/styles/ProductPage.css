@@ -15,7 +15,7 @@
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* max-width:50%; */
+    width:80%;
     margin: auto;
 }
 
@@ -38,11 +38,13 @@
 }
 
 .offcanvas-header{
-    background-color: green;
+    background-color: #3C9A5C;
+    color: #F5F9F6;
 }
 
 .offcanvas-body{
-    background-color: green;
+    background-color: #3C9A5C;
+
 }
 
 /* #products-cart{

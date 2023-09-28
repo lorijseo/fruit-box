@@ -6,4 +6,12 @@ export const getUser = async(req,res) =>{
     // const userData = user.toJSON();
     res.status(200).json({user});
     // res.json({msg:"you found me"})
+
+    try {
+        const user = await User.findOne({ _id: req.user.userId });
+        res.status(200).json({user});
+        
+    } catch (error) {
+        res.status(200).json({msg:"user not logged in"})
+    }
 }

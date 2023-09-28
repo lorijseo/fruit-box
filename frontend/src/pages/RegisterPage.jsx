@@ -78,7 +78,7 @@ export default function RegisterPage(){
                     <button type='submit'>Register</button>
                 </Form>
                 <div id="login-route">
-                    <h4>Already have an acount?</h4>
+                    <p>Already have an acount?</p>
                     <Link to='/login'>Login</Link>
                 </div>
             </div>

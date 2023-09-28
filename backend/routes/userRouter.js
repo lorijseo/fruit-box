@@ -1,10 +1,11 @@
 import {Router} from 'express';
 const router = Router();
 import { getUser } from '../controllers/userController.js';
+import {authenticateUser} from '../middleware/authMiddleware.js'
 
 
 // create user
-router.get('/current-user', getUser);
+router.get('/current-user', authenticateUser, getUser);
 
 //get user by id, delete user
 // router.get('/admin');

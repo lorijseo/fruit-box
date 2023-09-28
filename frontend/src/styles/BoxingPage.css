@@ -50,3 +50,17 @@ a{
     margin:10% auto;
 
 }
+
+#checkOutBtn{
+    margin-left:85%
+}
+
+#checkOutBtn, #backBtn{
+    border: 1px solid black;
+    padding: 5px 15px;
+    color: black;
+}
+
+#checkOutBtn:hover, #backBtn:hover{
+    text-decoration: none;
+}

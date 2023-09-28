@@ -10,12 +10,12 @@ import BoxIcon from '../images/box-icon.png';
 import BoxAlgorithm from '../components/BoxAlgorithm';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import {toast} from 'react-toastify'
 
 
 export default function BoxingPage(){
     let location = useLocation();
     const cart = location.state;
-    console.log(cart)
 
     const [formData, setFormData] = useState({carType:"", boxType:""});
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -38,7 +38,8 @@ export default function BoxingPage(){
 
     function handleBoxSelect(e){
         e.preventDefault()
-        setIsBoxSelected(true)
+        setIsBoxSelected(true);
+        toast.success(`Box packaging option selected`)
     }
 
 
@@ -47,14 +48,17 @@ export default function BoxingPage(){
         <Header/>
                 <div className="BoxingPage">
             
-            <Link to='/shop'>back to products</Link>
+            <Link to='/shop' id="backBtn">back to products</Link>
             <h1>Box Page</h1>
 
-            <div id="display-cars">
-                <img src={smCarIcon} alt=''/>
-                <img src={mdCarIcon} alt=''/>
-                <img src={lgCarIcon} alt=''/>
-                <img src={xlgCarIcon} alt=''/>
+
+            <div id="display-box">
+                <img src={BoxIcon} alt='' width='100px'/>
+                <img src={BoxIcon} alt='' width='100px'/>
+                <img src={BoxIcon} alt='' width='100px'/>
+                <img src={BoxIcon} alt='' width='100px'/>
+                {/* <img src={BoxIcon} alt='' />
+                <img src={BoxIcon} alt='' width='150px'/> */}
             </div>
 
             <form action="#" id="form">
@@ -84,14 +88,22 @@ export default function BoxingPage(){
                 </div>
                 <button onClick={handleFormSubmit}>Start Packing</button>
             </form>
-            <div id="display-box">
-                <img src={BoxIcon} alt='' width='100px'/>
-                <img src={BoxIcon} alt='' />
-                <img src={BoxIcon} alt='' width='150px'/>
+            <div id="display-cars">
+                <img src={smCarIcon} alt=''/>
+                <img src={mdCarIcon} alt=''/>
+                <img src={lgCarIcon} alt=''/>
+                <img src={xlgCarIcon} alt=''/>
             </div>
 
-            {isFormSubmitted && <BoxAlgorithm cart={cart} carType={formData['carType']} boxType={formData['boxType']} handleBoxSelect={handleBoxSelect}/>}
-            {isBoxSelected && <Link to='/check-out'>Check Out</Link>}
+
+            {isFormSubmitted && 
+            <BoxAlgorithm 
+                cart={cart} 
+                carType={formData['carType']} 
+                boxType={formData['boxType']} 
+                handleBoxSelect={handleBoxSelect}/>}
+
+            {isBoxSelected && <Link to='/check-out' id="checkOutBtn">Check Out</Link>}
             
         </div>
         <Footer/>

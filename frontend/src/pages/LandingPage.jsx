@@ -1,33 +1,94 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import backdrop from "../images/botw01.jpg";
-import yellowBox from "../images/yellow-box.png"
-import {Link} from 'react-router-dom';
-import "../styles/LandingPage.css"
+import yellowBox from "../images/yellow-box.png";
+import pinkBox from "../images/pink-box.png";
+import sprout from "../images/sprout.png";
+import farmBox from "../images/farm-box.png";
+import car from "../images/md-car-icon.png";
+import box from "../images/box-icon.png";
+// import {Shadows} from 'react-bootstrap'
 
-export default function LandingPage(){
-    const imageStyle ={
-        height: "1000px",
-        width: "auto",
-        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),url(${backdrop})`,
-    }
-    
+import {Link, useLoaderData, useNavigate} from 'react-router-dom';
+import "../styles/LandingPage.css";
+import axios from 'axios'
+
+// export async function loader(){
+//     try {
+//         const {data} = await axios.get('http://localhost:5100/api/users/current-user');
+//         return data
+//     } catch (error) {
+//         console.log(error)
+//         return null
+//     }
+// }
+
+
+// export async function preFetchUser(){
+//     try {
+//         const {data} = await axios.get('http://localhost:5100/api/users/current-user');
+//         console.log(data)
+//         return data
+//     } catch (error) {
+//         console.log(error)
+//         return null
+//     }
+// }
+
+
+export default function LandingPage(){    
+    // const data = useLoaderData();
     return(
         <>
-        <div className="LandingPage">
-            <div style={imageStyle}>
-                <h1>Fruitbox</h1>
-                <Link to="/shop">
-                    <div id="dashboard">
-                        <img src={yellowBox} width="200px"/>
-                        <h3>Fruits</h3>
+            {/* <Header/> */}
+            <div className="LandingPage" >
+                {/* {user? <p>hi ${user}</p> : <p>no user</p>} */}
+                <div className="title">
+                    <div className="sprout">
+                        <img src={sprout} alt="" width="100px" />
+                        <img src={sprout} alt="" width="100px" />
+                        <img src={sprout} alt="" width="100px" />
+                        <img src={sprout} alt="" width="100px" />
+                        <img src={sprout} alt="" width="100px" />
                     </div>
-                </Link>
-                
+                    <h1>Fruitbox</h1>
+                    {/* <div className="sprout">
+                        <img src={sprout} alt="" width="100px" />
+                        <img src={sprout} alt="" width="100px" />
+                        <img src={sprout} alt="" width="100px" />
+                        <img src={sprout} alt="" width="100px" />
+                        <img src={sprout} alt="" width="100px" />
+                    </div> */}
+                </div>
+                <div className="card-display">
+                    <div className="shadow p-3 mb-5 bg-white rounded">
+                        <img src={farmBox} alt="" width="128px" />
+                        <p>SHOP for produce</p>
+                    </div>
+                    <div className="shadow p-3 mb-5 bg-white rounded">
+                        <img src={box} alt="" />
+                        <p>CUSTOMIZE your box</p>
+                    </div>
+                    <div className="shadow p-3 mb-5 bg-white rounded">
+                        <img src={car} alt="" />
+                        <p>PICK UP your order</p>
+                    </div>
+                </div >
+                <button id="login-btn">
+                    <Link to="/login" > get started</Link>
+                </button>
+                {/* <div id="login-btn">
+                    {data === null ? (
+                        <Link to="/login" > get started</Link>
+                    ):(
+                        <>
+                            <p>Welcome back {data.user.username}!</p>
+                            <Link to="/shop">Let's get shopping</Link>
+                        </>
+                    )}
+                </div> */}
+
             </div>
-            
-        </div>
-        <Footer/>
+            <Footer/>
         </>
 
     )

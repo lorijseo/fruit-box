@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react';
+import { useLoaderData } from 'react-router-dom';
 import Product from '../components/Product'
 import Cart from '../components/Cart'
 import Header from '../components/Header.jsx';
@@ -8,9 +9,22 @@ import '../styles/ProductPage.css';
 import slate from "../images/wooden-slate.jpg";
 import register from "../images/cash-register.png";
 import backdrop from "../images/product-backdrop.jpg";
-import {toast} from 'react-toastify'
+import {toast} from 'react-toastify';
+import sprout from "../images/sprout.png";
 
 import {Button, Offcanvas, Badge} from 'react-bootstrap';
+
+export async function preFetchUser(){
+    try {
+        const {data} = await axios.get('http://localhost:5100/api/users/current-user');
+        console.log(data)
+        return data
+    } catch (error) {
+        console.log(error)
+        return null
+    }
+}
+
 
 export default function ProductPage(){
     const [products, setProducts] = useState([]);
@@ -67,25 +81,22 @@ export default function ProductPage(){
         })
     }
 
-    const imageStyle ={
-        height: "700px",
-        // width: "auto",
-        // backgroundImage: `url(${backdrop})`,
-        backgroundSize: "contain",
-        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),url(${backdrop})`,
-        objectPosition: '50% 100%',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center'
-        
 
+
+    const data = useLoaderData();
+    const [username, setUsername] = useState('Guest');
+
+    if (data && username !== data.user.username){
+        setUsername(data.user.username)
     }
 
     return(
         <>
             <Header/>
+            {/* {data ? (<p>hi {username}</p>): (<p>hi Guest</p>)} */}
             <div className="ProductPage">
-                <div id="main" style={imageStyle}>
-                    <h1>From Farm to Box</h1>
+                <div id="main">
+                    <h1>Produce</h1>
                 </div>
                 <div id="products-display">
                     <h2>Back in stock</h2>
@@ -100,13 +111,21 @@ export default function ProductPage(){
 
                 <Offcanvas show={show} placement='end' onHide={handleClose}>
                 <Offcanvas.Header closeButton>
-                    {/* <Offcanvas.Title>Offcanvas</Offcanvas.Title> */}
+                        <img src={sprout} alt="" width="20px" />
+                        <img src={sprout} alt="" width="20px" />
+                        <img src={sprout} alt="" width="20px" />
+                        <span>Cart</span>
+                        <img src={sprout} alt="" width="20px" />
+                        <img src={sprout} alt="" width="20px" />
+                        <img src={sprout} alt="" width="20px" />
                 </Offcanvas.Header>
+                
                 <Offcanvas.Body>
                     <div id="products-cart">
                         <Cart cart={cart} subtotal={subtotal} removeFromCart={removeFromCart}/>
                     </div>
                 </Offcanvas.Body>
+
                 </Offcanvas>
             </div>
             <Footer/>

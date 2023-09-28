@@ -27,10 +27,20 @@ button{
 #register-route{
     margin:0 auto;
     width:400px;
-    /* display:flex; */
+    display:flex;
 }
 
 .LoginPage a{
  text-decoration: none; 
  margin: 0;
+ 
+}
+
+#register-route > a{
+    margin: 0 10px
+    
+}
+
+button{
+    color: #F5F9F6;
 }

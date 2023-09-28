@@ -9,16 +9,19 @@ import LoginPage from './pages/LoginPage';
 // import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { submitRegistration } from './pages/RegisterPage';
 import { submitLogin } from './pages/LoginPage';
+import { preFetchUser} from './pages/ProductPage'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element:<LandingPage/>,
+    // loader: preFetchUser,
     errorElement: <ErrorPage/>
   },
   {
     path: '/shop',
     element: <ProductPage/>,
+    loader: preFetchUser,
     errorElement: <Error/>
   },
   {
@@ -29,6 +32,7 @@ const router = createBrowserRouter([
   {
     path: '/box',
     element: <BoxingPage/>,
+    // loader: preFetchUser,
     errorElement: <Error/>
   },
   {
@@ -61,13 +65,7 @@ function App() {
   // };
 
   return(
-    <>
-    {/* <PayPalScriptProvider option={initialOptions}>
-      
-    </PayPalScriptProvider> */}
       <RouterProvider router={router}/>
-      
-    </>
   )
   
 }

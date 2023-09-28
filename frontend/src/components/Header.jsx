@@ -18,17 +18,12 @@ export default function Header(){
                     <Navbar.Collapse>
                         <Nav>
 
-                            <Link to='/box'>
-                                    Box
-                            </Link>
                             <Link to='/shop'>
                                     Shop
                             </Link>
-                            <Link to='/login'>
-                                    Login
+                            <Link to='/logout'>
+                                    Logout
                             </Link>
-
-
 
                         </Nav>
                     </Navbar.Collapse>

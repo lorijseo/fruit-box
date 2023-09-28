@@ -1,23 +1,56 @@
+
+.LandingPage{
+    text-align: center;
+}
+
 .LandingPage h1{
     font-size: 100px;
-    text-align: center;
-    position:relative;
-    top:30%;
 }
 
-.LandingPage #dashboard{
-    position:relative;
-    text-align: center;
-    top:50%;
-    margin: auto;
+.LandingPage .title{
+    margin: 5%
 }
 
-.LandingPage #dashboard:hover{
-    cursor: pointer;
-    transform: translateY(-20px)
+
+
+
+.LandingPage .card-display{
+    display:flex;
+    justify-content: center;
 }
 
+.LandingPage .card-display > div{
+    margin: 10px
+}
+
+.LandingPage p{
+    margin:10px
+}
+
+.LandingPage #login-btn{
+    margin: 1% 0 4% 0;
+}
 .LandingPage a{
-    color:black;
+    /* color:black; */
     text-decoration: none;
+}
+
+/* #login-btn:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
+    text-decoration: none;
+} */
+
+button{
+    background-color: #3C9A5C;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: none;
+    /* box-shadow: 0px 0px 2px 2px #3C9A5C; */
+    
+}
+
+button a{
+    color: #F5F9F6;
+    margin: 0;
 }

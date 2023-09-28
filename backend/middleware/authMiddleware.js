@@ -12,7 +12,8 @@ import { verifyJWT } from '../token.js'
 export const authenticateUser = (req, res, next) => {
   const { token } = req.cookies;
   if (!token){
-    console.log('no token')
+    console.log('no token');
+    // throw new Error('not authorized token')
   };
 
   try {
@@ -20,6 +21,7 @@ export const authenticateUser = (req, res, next) => {
     req.user = {userId, role}
     next();
   } catch (error) {
-    console.log(error);
+    throw new Error('not authorized token')
+    console.log('error');
   }
 };

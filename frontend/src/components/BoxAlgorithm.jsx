@@ -1,24 +1,11 @@
-import {useState} from 'react';
+
 import BoxIcon from '../images/box-icon.png';
 import {Badge} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../styles/BoxAlgorithm.css'
 export default function BoxAlgorithm({cart, carType, boxType, handleBoxSelect}){
 
-    // const [productSize, setProductSize] = useState({sm: '', md: '', lg: ''})
-
-    //small fits 5, med fits 10, lg fits 15
-    // use small boxes only 
-    // cartype sm boxtype sm
-
-    // use large boxes only
-    // cartype lg boxtype lg or no pref
-    // console.log(cart)
-    // console.log(carType)
-    console.log(boxType)
-
     const totalItems = cart.reduce((acc, val) => acc = acc + val.qty, 0 );
-    console.log(totalItems)
 
     const boxSizes = {
         sm : 5,
@@ -26,27 +13,6 @@ export default function BoxAlgorithm({cart, carType, boxType, handleBoxSelect}){
         lg : 10
     }
 
-    function getSameBoxSize(size){
-        if(totalItems <= size){
-            return "1 small box"
-        }
-        else{
-            let boxNum = 0
-            totalItems % size === 0 ? (
-                boxNum = totalItems / 5
-            ): (
-                boxNum = Math.ceil(totalItems / size) 
-            ) 
-            return `${boxNum} small boxes`
-        }
-    }
- 
-    function isSmall(){
-        if (carType === "smCar" || boxType === "smBox"){
-            return true
-        }
-        return false
-    }
 
     function bestBoxFitOption(totalItems){
         let boxSizeArr = {
@@ -164,21 +130,29 @@ export default function BoxAlgorithm({cart, carType, boxType, handleBoxSelect}){
 
     return(
         <div className="BoxAlgorithm">
-            {/* <p>
-                {isSmall() && getSameBoxSize(5)}
-            </p> */}
-            <h4>Best Fit</h4>
-            <div onClick={handleBoxSelect}>
-                {bestBoxFitOption(totalItems)}
+            <h1>Select one of the packaging options</h1>
+            <div className="option shadow p-3 bg-light rounded">
+                <h4>Best Fit (recommended)</h4>
+                <div onClick={handleBoxSelect} className="box-display">
+                    {bestBoxFitOption(totalItems)}
+                </div>
             </div>
-            <h4>Based on your box choice</h4>
-            <div onClick={handleBoxSelect}>
-                {sameBoxSizeOption(totalItems, boxType)}
+            <div className="option shadow p-3 bg-light rounded">
+                <h4>Based on your box preference</h4>
+                <div onClick={handleBoxSelect} className="box-display">
+                    {sameBoxSizeOption(totalItems, boxType)}
+                </div>
             </div>
-            <h4>Best Fit for your car</h4>
-            <div onClick={handleBoxSelect}>
-                {bestCarFitOption(totalItems)}
+            <div className="option shadow p-3 bg-light rounded">
+                <h4>Based on your car type</h4>
+                <div onClick={handleBoxSelect} className="box-display">
+                    {bestCarFitOption(totalItems)}
+                </div>
             </div>
+
+
+
+
         </div>
     )
 }

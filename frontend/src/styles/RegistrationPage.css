@@ -27,10 +27,10 @@ button{
 #login-route{
     margin:0 auto;
     width:400px;
-    /* display:flex; */
+    display:flex;
 }
 
 .RegistrationPage a{
  text-decoration: none; 
- margin: 0
+ margin: 0 10px
 }
