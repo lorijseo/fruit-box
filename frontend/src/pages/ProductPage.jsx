@@ -9,12 +9,13 @@ import '../styles/ProductPage.css';
 import register from "../images/cash-register.png";
 import {toast} from 'react-toastify';
 import sprout from "../images/sprout.png";
+import {baseUrl} from '../serverURL.js'
 
 import {Button, Offcanvas, Badge} from 'react-bootstrap';
 
 export async function preFetchUser(){
     try {
-        const {data} = await axios.get('http://localhost:5100/api/users/current-user');
+        const {data} = await axios.get(`${baseUrl}/api/users/current-user`);
         console.log(data)
         return data
     } catch (error) {
@@ -38,7 +39,7 @@ export default function ProductPage(){
     // FIRST TIME: fetch and display fruit data from database 
     useEffect(() =>{
         async function fetchProducts(){
-            const {data} = await axios.get('http://localhost:5100/api/fruits');
+            const {data} = await axios.get(`${baseUrl}/api/fruits`);
             const displayFruits = data.fruits
             setProducts(displayFruits);
         }

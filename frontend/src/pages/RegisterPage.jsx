@@ -5,12 +5,14 @@ import {toast} from 'react-toastify'
 import '../styles/RegistrationPage.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import {baseUrl} from '../serverURL.js'
+
 
 export async function submitRegistration({request}){
     const formData = await request.formData();
     const data = Object.fromEntries(formData)
     try {
-        await axios.post('http://localhost:5100/api/auth/register', data);
+        await axios.post(`${baseUrl}/api/auth/register`, data);
         toast.success('Registration Sucessful')
         return redirect('/login')
     } catch (error) {
@@ -40,14 +42,6 @@ export default function RegisterPage(){
     //     console.log(formData);
     // }
 
-    // const imageStyle ={
-    //     height: "1000px",
-    //     backgroundSize: "contain",
-    //     backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),url(${sign})`,
-    //     // backgroundRepeat: 'no-repeat',
-    //     margin:'auto'
-
-    // }
     
 
     return(

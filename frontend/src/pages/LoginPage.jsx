@@ -5,6 +5,7 @@ import {toast} from 'react-toastify';
 import '../styles/LoginPage.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import {baseUrl} from '../serverURL.js'
 
 export async function submitLogin({request}){
     const formData = await request.formData();
@@ -13,7 +14,7 @@ export async function submitLogin({request}){
     // let errors = {msg:''};
     axios.defaults.withCredentials = true;
     try {
-        await axios.post('http://localhost:5100/api/auth/login', data);
+        await axios.post(`${baseUrl}/api/auth/login`, data);
         toast.success('Login Sucessful')
         // return redirect('/login')
         return redirect('/shop')

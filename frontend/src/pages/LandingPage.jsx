@@ -12,27 +12,6 @@ import {Link, useLoaderData, useNavigate} from 'react-router-dom';
 import "../styles/LandingPage.css";
 import axios from 'axios'
 
-// export async function loader(){
-//     try {
-//         const {data} = await axios.get('http://localhost:5100/api/users/current-user');
-//         return data
-//     } catch (error) {
-//         console.log(error)
-//         return null
-//     }
-// }
-
-
-// export async function preFetchUser(){
-//     try {
-//         const {data} = await axios.get('http://localhost:5100/api/users/current-user');
-//         console.log(data)
-//         return data
-//     } catch (error) {
-//         console.log(error)
-//         return null
-//     }
-// }
 
 
 export default function LandingPage(){    

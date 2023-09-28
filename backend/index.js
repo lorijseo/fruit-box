@@ -1,11 +1,8 @@
 // import 'express-async-errors'
 import express from 'express';
 import morgan from 'morgan';
-// import * as dotenv from 'dotenv';
-// dotenv.config()
 import "dotenv/config"
 const app = express();
-// import {v4 as uuid} from 'uuid';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import Fruit from './models/fruitModel.js';
@@ -44,7 +41,7 @@ app.use('/api/users', userRouter)
 
 
 app.get('/', (req,res) => {
-    res.json("vercel deplyed")
+    res.json("vercel deployed YAYY")
 })
 
 const port = process.env.PORT || 5100
