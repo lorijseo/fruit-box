@@ -12,7 +12,7 @@ import Fruit from './models/fruitModel.js';
 import cors from 'cors';
 // import * as paypal from "./pyapal-api.js";
 import stripe from 'stripe';
-let Stripe = stripe(process.env.STRIPE_SECRET_KEY)
+// let Stripe = stripe(process.env.STRIPE_SECRET_KEY)
 // custom imports
 import itemRouter from './routes/itemRouter.js';
 import authRouter from './routes/authRouter.js';
@@ -35,7 +35,7 @@ if(process.env.NODE_ENV === 'development'){
 app.use(cookieParser())
 app.use(express.json())
 // app.use(cors())
-app.use(cors({credentials: true, origin: 'http://localhost:5173'}));
+app.use(cors({credentials: true, origin: process.env.CLIENT_URL}));
 
 
 

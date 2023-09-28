@@ -2,8 +2,7 @@
 import {Card, Button, Form, Modal} from 'react-bootstrap';
 import {useState} from 'react';
 import '../styles/Product.css';
-import {FaCartPlus} from 'react-icons/fa';
-import sign from "../images/wooden-sign-small.png";
+
 
 
 export default function Product({product, addToCart}){

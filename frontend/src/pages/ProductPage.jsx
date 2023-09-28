@@ -6,9 +6,7 @@ import Cart from '../components/Cart'
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import '../styles/ProductPage.css';
-import slate from "../images/wooden-slate.jpg";
 import register from "../images/cash-register.png";
-import backdrop from "../images/product-backdrop.jpg";
 import {toast} from 'react-toastify';
 import sprout from "../images/sprout.png";
 

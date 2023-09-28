@@ -3,7 +3,6 @@ import {useState} from 'react';
 import axios from 'axios';
 import {toast} from 'react-toastify'
 import '../styles/RegistrationPage.css';
-import sign from "../images/long-wooden-sign-small.png";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
