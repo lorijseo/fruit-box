@@ -12,7 +12,7 @@ export async function submitLogin({request}){
     const data = Object.fromEntries(formData);
     // console.log(data)
     // let errors = {msg:''};
-    // axios.defaults.withCredentials = true;
+    axios.defaults.withCredentials = true;
     try {
         await axios.post(`${baseUrl}/api/auth/login`, data);
         toast.success('Login Sucessful')

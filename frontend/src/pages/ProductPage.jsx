@@ -19,7 +19,7 @@ export async function preFetchUser(){
         console.log(data)
         return data
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return null
     }
 }
@@ -83,11 +83,11 @@ export default function ProductPage(){
 
 
     const data = useLoaderData();
-    const [username, setUsername] = useState('Guest');
+    // const [username, setUsername] = useState('Guest');
 
-    if (!data.msg && username !== data.user.username){
-        setUsername(data.user.username)
-    }
+    // if (!data.msg && username !== data.user.username){
+    //     setUsername(data.user.username)
+    // }
 
     return(
         <>

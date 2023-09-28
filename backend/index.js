@@ -27,16 +27,16 @@ if(process.env.NODE_ENV === 'development'){
 app.use(cookieParser())
 app.use(express.json())
 // app.use(cors())
-// app.use(cors({credentials: true, origin: process.env.CLIENT_URL}));
+app.use(cors({credentials: true, origin: process.env.CLIENT_URL}));
 // app.use(cors({credentials: true, origin: "https://box-client-6f0o7rrsi-lorijseo.vercel.app"}));
 
-app.use(cors(
-    {
-        origin: ['https://box-server.vercel.app'],
-        methods: ["POST", "GET"],
-        credential: true
-    }
-))
+// app.use(cors(
+//     {
+//         origin: ['https://box-server.vercel.app'],
+//         methods: ["POST", "GET"],
+//         credential: true
+//     }
+// ))
 
 
 

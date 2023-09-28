@@ -14,7 +14,7 @@ export const authenticateUser = (req, res, next) => {
   if (!token){
     console.log('no token');
     res.status(200).json({msg:"not authorized token"})
-    throw new Error('not authorized token')
+    // throw new Error('not authorized token')
   }
   else{
     try {
@@ -23,7 +23,7 @@ export const authenticateUser = (req, res, next) => {
       next();
     } catch (error) {
       res.status(200).json({msg:"not authorized token"})
-      throw new Error('not authorized token')
+      // throw new Error('not authorized token')
     }
   }
 };
