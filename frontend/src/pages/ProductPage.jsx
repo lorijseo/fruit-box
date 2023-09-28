@@ -13,16 +13,16 @@ import {baseUrl} from '../serverURL.js'
 
 import {Button, Offcanvas, Badge} from 'react-bootstrap';
 
-// export async function preFetchUser(){
-//     try {
-//         const {data} = await axios.get(`${baseUrl}/api/users/current-user`);
-//         console.log(data)
-//         return data
-//     } catch (error) {
-//         console.log(error)
-//         return null
-//     }
-// }
+export async function preFetchUser(){
+    try {
+        const {data} = await axios.get(`${baseUrl}/api/users/current-user`);
+        console.log(data)
+        return data
+    } catch (error) {
+        console.log(error)
+        return null
+    }
+}
 
 
 export default function ProductPage(){
@@ -82,12 +82,12 @@ export default function ProductPage(){
 
 
 
-    // const data = useLoaderData();
-    // const [username, setUsername] = useState('Guest');
+    const data = useLoaderData();
+    const [username, setUsername] = useState('Guest');
 
-    // if (!data.msg && username !== data.user.username){
-    //     setUsername(data.user.username)
-    // }
+    if (!data.msg && username !== data.user.username){
+        setUsername(data.user.username)
+    }
 
     return(
         <>
