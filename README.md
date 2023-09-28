@@ -1,5 +1,5 @@
 # React + Vite
 
-![Main](/gif/cart.gif)
+![Main](/gifs/cart.gif)
 
-![Main](/product/cart.gif)
+![Main](/gifs/product.gif)
