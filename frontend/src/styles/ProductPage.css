@@ -6,9 +6,12 @@
     flex-grow: 3;
 } */
 
+.ProductPage h1{
+    margin: 3% 0;
+}
+
 #products-display h2{
-    text-align: center;
-    
+    text-align: center; 
 }
 
 #products{
@@ -26,13 +29,18 @@
 }
 
 #register-container{
-    text-align: end;
-    /* background-color: #ffe881;
-    padding: 10px;
-    border-radius: 10px; */
+    position: absolute;
+    right:3%;
+    text-align: center;
+    background-color: #3C9A5C;
+    padding: 15px 25px;
+    border-radius: 50%;
+    color: #F5F9F6;
 }
 
-#register:hover{
+
+
+#register-container:hover{
     cursor: pointer;
     transform:translateY(-10px)
 }

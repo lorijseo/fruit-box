@@ -95,14 +95,16 @@ export default function ProductPage(){
             <Header/>
             {/* {data ? (<p>hi {username}</p>): (<p>hi Guest</p>)} */}
             <div className="ProductPage">
+                <div id="register-container" onClick={handleShow}>
+                    <img src={register} alt="" id="register" />
+                    <p>
+                    Check out</p>
+                </div>
                 <div id="main">
-                    <h1>Produce</h1>
+                    <h1>Shop for Produce</h1>
                 </div>
                 <div id="products-display">
-                    <h2>Back in stock</h2>
-                    <div id="register-container">
-                        <img src={register} alt="" id="register" onClick={handleShow}/>
-                    </div>
+                    {/* <h2>Back in stock</h2> */}
                     <div id="products">
                         {products.map((p) => <Product product={p} key={p._id} addToCart={addToCart}/>)}
                     </div>
@@ -119,7 +121,6 @@ export default function ProductPage(){
                         <img src={sprout} alt="" width="20px" />
                         <img src={sprout} alt="" width="20px" />
                 </Offcanvas.Header>
-                
                 <Offcanvas.Body>
                     <div id="products-cart">
                         <Cart cart={cart} subtotal={subtotal} removeFromCart={removeFromCart}/>

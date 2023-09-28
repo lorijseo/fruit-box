@@ -55,7 +55,8 @@ export default function Product({product, addToCart}){
                             {[1,2,3,4,5].map((x) => <option key={x} value={x}>{x}</option>)}
                         </select> */}
                         <input type="number" min="0" max="50" value={Number(qty)} onChange={(e) => handleDropdown(e)} placeholder="0"/>
-                        <Button variant="success" onClick={addToCartHandler}><FaCartPlus/></Button>
+                        {/* <button onClick={addToCartHandler}><FaCartPlus/></button> */}
+                        <button onClick={addToCartHandler}>Add</button>
                     </div>
 
                 </div>

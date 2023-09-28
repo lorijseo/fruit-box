@@ -34,9 +34,14 @@
 
 .Product #select-qty{
     display:flex;
+    justify-content: space-between;
 }
 
 .Product Button{
-    margin: 0 10px;
+    margin: 0;
+}
+
+.Product p{
+    margin: 5px 0;
 }
 
