@@ -1,8 +1,9 @@
-import 'express-async-errors'
+// import 'express-async-errors'
 import express from 'express';
 import morgan from 'morgan';
-import * as dotenv from 'dotenv';
-dotenv.config()
+// import * as dotenv from 'dotenv';
+// dotenv.config()
+import "dotenv/config"
 const app = express();
 import {v4 as uuid} from 'uuid';
 import mongoose from 'mongoose';
@@ -11,7 +12,7 @@ import Fruit from './models/fruitModel.js';
 // import fruits from './fruits.js'
 import cors from 'cors';
 // import * as paypal from "./pyapal-api.js";
-import stripe from 'stripe';
+// import stripe from 'stripe';
 // let Stripe = stripe(process.env.STRIPE_SECRET_KEY)
 // custom imports
 import itemRouter from './routes/itemRouter.js';
