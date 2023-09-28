@@ -21,9 +21,9 @@ export default function Header(){
                             <Link to='/shop'>
                                     Shop
                             </Link>
-                            <Link to='/'>
+                            {/* <Link to='/'>
                                     Logout
-                            </Link>
+                            </Link> */}
 
                         </Nav>
                     </Navbar.Collapse>
