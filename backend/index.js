@@ -5,7 +5,7 @@ import morgan from 'morgan';
 // dotenv.config()
 import "dotenv/config"
 const app = express();
-import {v4 as uuid} from 'uuid';
+// import {v4 as uuid} from 'uuid';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import Fruit from './models/fruitModel.js';
