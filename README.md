@@ -20,3 +20,4 @@ A fresh produce eCommerce web application that uses selection algorithm to provi
 ### Generate packaging budles based on user input
 ![Main](gifs/cart.gif)
 
+IMAGES from freepik and Hyrule Compendium API
